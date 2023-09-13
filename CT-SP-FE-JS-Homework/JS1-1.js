@@ -14,46 +14,46 @@
 // Print out all cubed numbers up to the total value 1000. Meaning that if the cubed number is over 1000 break the loop.
 
 
-let cubedNumber = 1;
-while(Math.pow(cubedNumber, 3) <= 1000) {
-    console.log(Math.pow(cubedNumber , 3));
-    cubedNumber++;
-}
+// let cubedNumber = 1;
+// while(Math.pow(cubedNumber, 3) <= 1000) {
+//     console.log(Math.pow(cubedNumber , 3));
+//     cubedNumber++;
+// }
 
 
 
 //* 2. Prime Numbers
 // Get first prime numbers up to 100
 
-function isPrime(number) {
-    if (number <= 1) {
-      return false;
-    }
-    if (number <= 3) {
-      return true;
-    }
-    if (number % 2 === 0 || number % 3 === 0) {
-      return false;
-    }
-    let i = 5;
-    while (i * i <= number) {
-      if (number % i === 0 || number % (i + 2) === 0) {
-        return false;
-      }
-      i += 6;
-    }
-    return true;
-  }
+// function isPrime(number) {
+//     if (number <= 1) {
+//       return false;
+//     }
+//     if (number <= 3) {
+//       return true;
+//     }
+//     if (number % 2 === 0 || number % 3 === 0) {
+//       return false;
+//     }
+//     let i = 5;
+//     while (i * i <= number) {
+//       if (number % i === 0 || number % (i + 2) === 0) {
+//         return false;
+//       }
+//       i += 6;
+//     }
+//     return true;
+//   }
   
-  function printPrimesUpTo100() {
-    for (let num = 2; num <= 100; num++) {
-      if (isPrime(num)) {
-        console.log(num);
-      }
-    }
-  }
+//   function printPrimesUpTo100() {
+//     for (let num = 2; num <= 100; num++) {
+//       if (isPrime(num)) {
+//         console.log(num);
+//       }
+//     }
+//   }
   
-  printPrimesUpTo100();
+//   printPrimesUpTo100();
   
 
 
@@ -62,17 +62,17 @@ function isPrime(number) {
 // Take in a users input for their age, if they are younger than 18 log kids, 
 //if they're 18 to 65 log adults, else log seniors
 
-function determineAge(age){
-    if(age < 18){
-        return 'Kids';
-    }else if( age >= 18 && age <= 65){
-        return 'Adult'
-    } else {
-        return 'Senior';
-    }
-}
+// function determineAge(age){
+//     if(age < 18){
+//         return 'Kids';
+//     }else if( age >= 18 && age <= 65){
+//         return 'Adult'
+//     } else {
+//         return 'Senior';
+//     }
+// }
 
-console.log(determineAge(66));
+// console.log(determineAge(66));
 
 
 

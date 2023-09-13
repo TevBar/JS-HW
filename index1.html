@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+
+  <div id="shopping-list">
+    <h2>Your shopping list:</h2>
+    <ul id="listItems"></ul> 
+  </div>
+
+  <div id="options"> 
+    <h2>options: </h2>
+    <button onclick="addItem()">Add an item</button>
+    <button onclick="removeItem()">Remove an item</button>
+    <button onclick="showList()">Show current list </button>
+    <button onclick="quit()">quit</button>
+  </div>
+  <script>
+
+    // initializing shopping list 
+    const shoppingList = [];
+
+    function showShoppingList(){
+        const listItem = document.getElementById('listItems');
+        listItems.innerHTML = " "
+        for(let i = 0; i < shoppingList.length; i++) {
+            const listItem = document.createElement("li")
+            listItem.textContent = `${i + 1}. ${shoppingList[i]}`;
+            listItems.appendChild(listItem);
+            
+        }
+    }
+
+    // function here is adding an item to the shopping list
+
+    function addItem() {
+        const item = prompt("enter the item that you want to add:");
+        if(item){
+            shoppingList.push(item)
+            alert(`${item} has been added to your shopping list`)
+        }
+    }
+
+    //  this function will remove an item from the shopping list
+
+    function removeItem() {
+        if(shoppingList.length === 0) {
+            alert("Your shopping list is empty. ");
+            return;
+
+        }   
+        showShoppingList();
+        
+        const itemIndex = prompt("Enter the number of the item to remove") -1;
+        if (itemIndex >= 0 && itemIndex < shoppingList.length) { 
+            const removeItem = shoppingList.splice(itemIndex, 1);
+            alert(`${removedItem} has been removed from your shopping list.`);
+        } else{
+            alert("invalid item number.");
+        }
+    }
+
+    // this function shows the current shopping list
+
+    function showList(){
+        if(shoppingList.length === 0) { 
+            alert("Your shopping list is empty")
+        } else {
+            showShoppingList();
+            alert("thank you for using the shopping cart. Have a great day!")
+        }
+    }
+
+    // this function allows you to quit the program
+
+    function quit(){
+        showShoppingList();
+        alert("thank you for shopping with us");
+    }
+  </script>
+</body>
+</html>
