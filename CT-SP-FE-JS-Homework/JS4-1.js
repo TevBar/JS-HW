@@ -11,7 +11,7 @@
 
 let places = ["", 'Argentina', " ", "san diego", "  ", "", "Boston", "New York"]
 
-let filteredPlaces = places.filter(place => place.trim !== " ");
+let filteredPlaces = places.filter(place => place.trim() !== " " && place.trim() !== "");
 
 console.log(filteredPlaces);
 
@@ -28,7 +28,7 @@ console.log(filteredPlaces);
 let author = ["Joel Carter", " Victor aNisimov", " Andrew p. Garfield", "David hassELHOFF", "Gary A.J. Bernstein"]
 
 let sortedAuthors = author.sort(function(a,b){
-    let lastNameA = a.split(" " ).pop().toLowerCase();
+    let lastNameA = a.split(" ").pop().toLowerCase();
     let lastNameB = b.split(" ").pop().toLowerCase();
 
     if(lastNameA < lastNameB) return -1;
@@ -45,18 +45,31 @@ console.log(sortedAuthors);
 // places = [('Nashua',32),("Boston",12),("Los Angelos",44),("Miami",29)]
 
 
-function celsiusToFarhenheit(celsius){
-    return (9/5) * C + 32;
+function celsiusToFahrenheit(celsius){
+    return (9/5) * celsius + 32;
+
 }
+places = [
+    {name: 'Nashua', celsius: 32},
+    {name: "Boston", celsius: 12},
+    {name: "Los Angeles", celsius: 44},
+    {name: "Miami", celsius: 29}
+];
 
-const places = [
-    ["Nashua", 32]
-    ["boston", 12]
-    ["los angeles", 44]
-    ["Miami", 29]
-]
 
-const convertedPlaces =  places.map(place => [place[0] , celsiusToFarhenheit(place[1])]);
+// this function below is to convert the temperatures 
+const fahrenheitPlaces = places.map(place => ({
+    name: place.name,
+    fahrenheit: celsiusToFahrenheit(place.celsius)
+}));
+
+console.log(fahrenheitPlaces);
+
+
+
+
+
+
  
 // Output: [('Nashua', 89.6), ('Boston', 53.6), ('Los Angelos', 111.2), ('Miami', 84.2)]
 
@@ -77,17 +90,17 @@ function fibonacci(num) {
     if(num < 2){
         return num
     } else{
-        return fibonacci(n-1) + fibonacci(n - 2);
+        return fibonacci(num - 1) + fibonacci(num - 2);
     }
 }
 
-const nTerms = prompt('Enter the number of terms: ');
+const numTerms = prompt('Enter the number of terms: ');
 
-if(nTerms <= 0 ) {
+if(numTerms <= 0 ) {
     console.log('Enter a positive integer')
 } else { 
-    for(let i = 0; i < nTerms; i++){
+    for(let i = 0; i < numTerms; i++){
         console.log(fibonacci(i));
     }
 }
-
+fibonacci(5)

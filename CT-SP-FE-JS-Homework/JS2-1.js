@@ -22,7 +22,7 @@ function mergeAndSortLists(list1, list2){
     const sortedList = mergedList.sort(( a, b) => a - b );
 }
 
-console.log(numbers[1,11,5,4,9,13,8])
+console.log(numbers([1,11,5,4,9,13,8]))
 
 
 
