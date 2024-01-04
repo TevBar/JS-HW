@@ -1,13 +1,13 @@
 // parking garage class homework below
 
 class parkingGarage {
-    constructor(totalTickets, totalSpaces){
-        this.tickets = Array.from({length:totalTickets} , (_,index) => index + 1); 
+    constructor(totalTicket, totalSpaces){
+        this.tickets = Array.from({length:totalTicket} , (_,index) => index + 1); 
         this.spaces = Array.from({length: totalSpaces}, (_,index) => index + 1);
         this.purchasedTickets = null;
     }
 
-    takeTickets(){
+    takeTicket(){
         if(this.tickets.length > 0 && this.spaces.length > 0){
             const ticketNumber = this.tickets.shift();
             const parkingSpace = this.spaces.shift();
@@ -33,7 +33,7 @@ class parkingGarage {
     }
 
     leaveGarage(){
-        if(currentTicket) {
+        if(this.currentTicket) {
             if(this.currentTicket.paid){
                 console.log('Thank you and have a great day!')
             } else { 
@@ -55,14 +55,16 @@ class parkingGarage {
 
 
 // Example usage:
-const parkingGarage = new ParkingGarage(10, 10);
+const garage = new parkingGarage(10, 10);
 
 // Simulate a car taking a ticket
-parkingGarage.takeTicket();
+garage.takeTicket();
 
 // Simulate a car paying for parking
-parkingGarage.payForParking();
+garage.payForParking();
 
 // Simulate a car leaving the garage
-parkingGarage.leaveGarage();
+garage.leaveGarage();
+
+
 
